@@ -41,6 +41,7 @@ from typing import *
 
 input = [1, 2, 3]
 
+
 def permute(nums: List[int]) -> List[List[int]]:
     length = len(nums)
     candidates = nums.copy()
@@ -55,11 +56,12 @@ def permute(nums: List[int]) -> List[List[int]]:
             copied_candidates = candidates[:]
             copied_candidates.remove(candidate)
             dfs(depth + 1, path + [candidate], copied_candidates)
+
     dfs(0, [], candidates)
     return results
+
+
 print(permute(input))
-
-
 
 
 def permute(nums: List[int]) -> List[List[int]]:
@@ -74,15 +76,18 @@ def permute(nums: List[int]) -> List[List[int]]:
 
         for i, num in enumerate(candidates):
             # if num not in path:
-                candidates.pop(i)
-                path.append(num)
-                dfs(depth + 1, path)
-                path.pop()
-                candidates.insert(i,num)
+            candidates.pop(i)
+            path.append(num)
+            dfs(depth + 1, path)
+            path.pop()
+            candidates.insert(i, num)
 
     dfs(0, [])
     return results
+
+
 print(permute(input))
+
 
 def permute(nums: List[int]) -> List[List[int]]:
     results = []
@@ -101,6 +106,8 @@ def permute(nums: List[int]) -> List[List[int]]:
 
     dfs(0, [])
     return results
+
+
 print(permute(input))
 
 # def permute(nums: List[int]) -> List[List[int]]:
@@ -120,9 +127,8 @@ print(permute(input))
 # print(permute(input))
 
 
-
 def combine(n: int, k: int) -> List[List[int]]:
-    candidates = [num for num in range(1, n+1)]
+    candidates = [num for num in range(1, n + 1)]
     results = []
     # path = []
     # print(candidates)
@@ -133,17 +139,19 @@ def combine(n: int, k: int) -> List[List[int]]:
             return
         for idx, candidate in enumerate(candidates[start:]):
             # if candidate not in path:
-                path.append(candidate)
-                dfs(depth+1, path, start+idx+1)
-                path.pop()
+            path.append(candidate)
+            dfs(depth + 1, path, start + idx + 1)
+            path.pop()
+
     dfs(0, [], 0)
     return results
 
-print(combine(4,2))
+
+print(combine(4, 2))
 
 
 def combine(n: int, k: int) -> List[List[int]]:
-    candidates = [num for num in range(1, n+1)]
+    candidates = [num for num in range(1, n + 1)]
     results = []
     path = []
     # print(candidates)
@@ -156,18 +164,18 @@ def combine(n: int, k: int) -> List[List[int]]:
         for index, candidate in enumerate(candidates):
             # if candidate not in path:
             path.append(candidate)
-            dfs(depth+1, path, candidates[index+1:])
+            dfs(depth + 1, path, candidates[index + 1 :])
             path.pop()
 
     dfs(0, path, candidates)
     return results
 
-print(combine(4,2))
 
+print(combine(4, 2))
 
 
 def combine(n: int, k: int) -> List[List[int]]:
-    candidates = [num for num in range(1, n+1)]
+    candidates = [num for num in range(1, n + 1)]
     results = []
     path = []
     # print(candidates)
@@ -179,18 +187,19 @@ def combine(n: int, k: int) -> List[List[int]]:
 
         for index, candidate in enumerate(candidates):
             # if candidate not in path:
-                dfs(depth+1, path + [candidate], candidates[index+1:])
+            dfs(depth + 1, path + [candidate], candidates[index + 1 :])
 
     dfs(0, path, candidates)
     return results
 
-print(combine(4,2))
+
+print(combine(4, 2))
 
 
-a = [i for i in range(1,10) if i % 2 == 0]
+a = [i for i in range(1, 10) if i % 2 == 0]
 
 print(a)
 
-b = (i for i in range(1,10) if i % 2 == 0)
+b = (i for i in range(1, 10) if i % 2 == 0)
 
 print(*b)

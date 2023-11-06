@@ -8,9 +8,12 @@ from typing import *
 #                      chunks=(1000, 1000))
 # x + x.T - x.mean(axis=0)
 
+
 def addition(n):
-    return n+n
-numbers = (1,2,3,4)
+    return n + n
+
+
+numbers = (1, 2, 3, 4)
 
 result = map(addition, numbers)
 print(result)
@@ -20,7 +23,7 @@ print(list(result))
 
 strs: Deque = collections.deque()
 
-s = '123'
+s = "123"
 
 print(s[5:7])
 
@@ -38,6 +41,7 @@ print(s[5:7])
 
 # Python program to demonstrate working
 # of map.
+
 
 # Return double of n
 def addition(n):
@@ -105,7 +109,7 @@ print(list(zip(a)))
 print(list(zip(*a)))
 print(nums)
 
-fruits = ['a', 'b', 'c']
+fruits = ["a", "b", "c"]
 print(*fruits)
 print(nums)
 print(*nums)
@@ -134,9 +138,9 @@ def recursive_dfs(v: Any, discovered=[]):
 
 result = []
 recursive_dfs(1, result)
-print(f'recursive_dfs: {result}')
-print(f'recursive_dfs: {recursive_dfs(2)}')
-f'recursive_dfs: {recursive_dfs(3)}'
+print(f"recursive_dfs: {result}")
+print(f"recursive_dfs: {recursive_dfs(2)}")
+f"recursive_dfs: {recursive_dfs(3)}"
 
 
 def iterative_dfs(start_v):
@@ -152,7 +156,7 @@ def iterative_dfs(start_v):
 
 
 result = iterative_dfs(1)
-print(f'iterative_dfs: {result}')
+print(f"iterative_dfs: {result}")
 
 
 def iterative_bfs(start_v):
@@ -168,7 +172,7 @@ def iterative_bfs(start_v):
 
 
 result = iterative_bfs(1)
-print(f'iterative_bfs: {result}')
+print(f"iterative_bfs: {result}")
 
 
 dic = {
@@ -183,6 +187,8 @@ dic = {
 }
 result = []
 digits = "23"
+
+
 # def letterCombination(digits:str) -> List[str]:
 def dfs(index, path):
     print("indfs")
@@ -193,9 +199,9 @@ def dfs(index, path):
     print(path)
 
     for char in dic[digits[index]]:
-        dfs(index+1,path+char)
-        print(path+char+"asdf")
+        dfs(index + 1, path + char)
+        print(path + char + "asdf")
 
-dfs(0,"")
+
+dfs(0, "")
 print(result)
-
